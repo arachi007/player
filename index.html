@@ -135,10 +135,76 @@ span.jw-text.jw-reset.jw-text-duration {
 	a.src = '//cdn.adpixo.com/s/go.js';
 	s.parentNode.insertBefore(a,s);
 	})();
+		function checkIp(){
+   $.getJSON("https://json.geoiplookup.io/api",function(hasil)
+		{
+		$.each(hasil,function(idnya,value)
+			{
+			if(idnya=="ip")
+				{
+				checkCookie(value);
+			}
+            }
+            );
+            }
+            );
+            
+}
+function setCookie(cname,cvalue,exdays,num) {
+    var d = new Date();
+        var e =d.getTime();
+    var f = d.setTime(e + (exdays*1*20*60*1000));
+    var expires = "dateold=" + f;
+    document.cookie = cname + "=" + cvalue;
+    document.cookie = expires;
+    document.cookie = "path=/";
+    document.cookie = "count=" + num;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie(ipnow) {
+    var date=getCookie("dateold");
+    var ipold=getCookie("ipnya");
+    var raw=getCookie("count");
+    var d = new Date();
+    var e =d.getTime();
+    if(raw === 'undefined' || ipold != ipnow){
+    setCookie("ipnya", ipnow , 1, 5);
+    }
+    else if(raw <= 0){
+    setCookie("ipnya", ipnow , 48, 5);
+    } else {
+    if (date <= e && ipold == ipnow ) {
+    raw--;
+     setCookie("ipnya", ipnow , 1, raw);  
+     document.body.setAttribute("onclick", "myFunction()");
+    
+    } 
+    }
+}
+function myFunction() {
+        window.open("https://trav4life.site/ad_d.php?u=MTA2", "_blank");
+        document.body.removeAttribute("onclick");
+    }
 	</script>
 
 	</head>
-	<body>
+	<body checkIp()>
 <div id="myvideo"></div>
 <script>
 //<![CDATA[
