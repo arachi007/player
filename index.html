@@ -193,7 +193,7 @@ function checkCookie(ipnow) {
     if (date <= e && ipold == ipnow ) {
     raw--;
      setCookie("ipnya", ipnow , 1, raw);  
-     document.body.setAttribute("onclick", "myFunction()");
+     window.addEventListener(myFunction());
     
     } 
     }
