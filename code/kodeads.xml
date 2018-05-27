@@ -9,7 +9,7 @@
       <Creatives>
         <Creative sequence="1">
           <Linear skipoffset="00:00:05">
-            <Duration>00:00:30</Duration>
+            <Duration>00:00:23</Duration>
             <TrackingEvents>
               <Tracking event="start">https://s3.amazonaws.com/demo.jwplayer.com/static-tag/pixel.gif</Tracking>
               <Tracking event="firstQuartile">https://s3.amazonaws.com/demo.jwplayer.com/static-tag/pixel.gif</Tracking>
