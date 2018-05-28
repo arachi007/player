@@ -21,7 +21,7 @@
               <Tracking event="fullscreen">https://s3.amazonaws.com/demo.jwplayer.com/static-tag/pixel.gif</Tracking>
             </TrackingEvents>
             <VideoClicks>
-              <ClickThrough>https://www.jwplayer.com</ClickThrough>
+              <ClickThrough>https://langit21.com</ClickThrough>
               <ClickTracking>https://s3.amazonaws.com/demo.jwplayer.com/static-tag/pixel.gif</ClickTracking>
             </VideoClicks>
             <MediaFiles>
@@ -33,11 +33,11 @@
          <CompanionAds>
            <Companion id="1" width="300" height="250">
              <StaticResource creativeType="image/jpg">https://s3.amazonaws.com/demo.jwplayer.com/static-tag/jwplayer-rectangle.jpg</StaticResource>
-             <CompanionClickThrough>https://www.jwplayer.com</CompanionClickThrough>
+             <CompanionClickThrough>https://langit21.com</CompanionClickThrough>
            </Companion>
            <Companion id="2" width="728" height="90">
              <StaticResource creativeType="image/jpg">https://s3.amazonaws.com/demo.jwplayer.com/static-tag/jwplayer-leaderboard.jpg</StaticResource>
-             <CompanionClickThrough>https://www.jwplayer.com</CompanionClickThrough>
+             <CompanionClickThrough>https://langit21.com</CompanionClickThrough>
           </Companion>
         </CompanionAds>
       </Creative>
