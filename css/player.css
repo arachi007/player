@@ -112,13 +112,20 @@ body {
         opacity: 1
     }
 }
-.loading-ani,
 .loading-container {
     height: 100px;
     position: relative;
     width: 100px;
     border-radius: 100%;
-    margin: 10vh auto	
+    top: 50%;
+    left: 50%;
+	transform: translate(-50%, -50%);
+}
+.loading-ani {
+    height: 100px;
+    position: relative;
+    width: 100px;
+    border-radius: 100%;
 }
 .loading-ani {
     border: 2px solid transparent;
