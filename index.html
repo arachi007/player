@@ -24,9 +24,8 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   });
   playerInstance.play();
 });
-	jwplayer().onDisplayClick(function() { jwplayer().setFullscreen(true); });
 	playerInstance.on('displayClick', function(){
-	playerInstance.setFullscreen(true); 
+	playerInstance.setFullscreen(true);
 	});
 	playerInstance.addButton("//icons.jwplayer.com/icons/white/download.svg", "Download Subtitle", function() {
         window.open("https://safelinku.net/full/?api=7eb43b0a6e9cb0ad08c66508c7825ed9d00ec81f&type=1&url=" + playerInstance.getPlaylistItem()['tracks'][0]['file']);
