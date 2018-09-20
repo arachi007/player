@@ -56,3 +56,10 @@ color: #ffb5f3;
     padding: .1em .3em;
     text-shadow: 0 0 10px yellow;
 }
+.jwplayer.jw-flag-aspect-mode {
+    height: 100% !important;
+}
+.jwplayer.jw-flag-aspect-mode, .video-js {width:100% !important; height: 100% !important}
+ #myvideo .jw-preview.jw-reset {
+    background-size: cover;
+}
