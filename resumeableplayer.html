@@ -1,0 +1,241 @@
+
+
+<html>
+<head>
+<title>AnimeHADE Player</title>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+<style type="text/css">
+html, body {
+    height: 100%;
+}
+/* The Modal (background) */
+.infoPlayer {
+	min-height: calc(100vh - 60px);
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+	justify-content: center;
+    overflow: auto; /* Enable scroll if needed */
+	flex-direction: column;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,1); /* Black w/ opacity */
+	
+	@media(max-width: 768px) {
+		min-height: calc(100vh - 20px);
+	}
+}
+
+/* Modal Content/Box */
+.infoPlayer-content {
+	color: #ccc;
+    background-color: rgba(50,50,50,0.8);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div id="infoPlayer" class="modal">
+
+<div class="infoPlayer-content">
+<p id="resumeInfo">
+Haii.. pengunjung setia AnimeHADE.Com ^_^ Saya Megumin Chan</br>
+Senang bisa liat kamu lagi.</br>
+</p>
+<p>
+Klik atau Tap box ini untuk menutup.
+</p>
+</div>
+</div>
+<script type="7850cfebded61580ac24b859-text/javascript">
+// Get the modal
+var modal = document.getElementById('infoPlayer');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("infoPlayer-content")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<div id="player"></div>
+<script type="7850cfebded61580ac24b859-text/javascript" src="//content.jwplatform.com/libraries/0P4vdmeO.js"></script>
+
+<script type="7850cfebded61580ac24b859-text/javascript">
+/**
+* Interface for easily setting/getting cookies
+* http://stackoverflow.com/questions/14573223/set-cookie-and-get-cookie-with-javascript
+**/
+var $cookie = {
+    getItem: function(sKey) {
+        return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+    },
+    setItem: function(sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+        if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) {
+            return false;
+        }
+        var sExpires = "";
+        if (vEnd) {
+            switch (vEnd.constructor) {
+                case Number:
+                    sExpires = vEnd === Infinity ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; max-age=" + vEnd;
+                    break;
+                case String:
+                    sExpires = "; expires=" + vEnd;
+                    break;
+                case Date:
+                    sExpires = "; expires=" + vEnd.toUTCString();
+                    break;
+            }
+        }
+        document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue) + sExpires + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "") + (bSecure ? "; secure" : "");
+        return true;
+    },
+    removeItem: function(sKey, sPath, sDomain) {
+        if (!sKey || !this.hasItem(sKey)) {
+            return false;
+        }
+        document.cookie = encodeURIComponent(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT" + (sDomain ? "; domain=" + sDomain : "") + (sPath ? "; path=" + sPath : "");
+        return true;
+    },
+    hasItem: function(sKey) {
+        return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+    },
+    keys: /* optional method: you can safely remove it! */ function() {
+        var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "").split(/\s*(?:\=[^;]*)?;\s*/);
+        for (var nIdx = 0; nIdx < aKeys.length; nIdx++) {
+            aKeys[nIdx] = decodeURIComponent(aKeys[nIdx]);
+        }
+        return aKeys;
+    }
+};
+var logMessage = function(message) {
+    document.getElementById('resumeInfo').innerHTML += message += '<br />';
+}
+</script>
+<script type="7850cfebded61580ac24b859-text/javascript">
+	
+	var playerInstance = jwplayer("player");
+		playerInstance.setup({
+			sources: [{"type": "video/mp4", "label": "HD", "file": "https://doc-0c-1k-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/u27atl5gb7efbn921nq1cepemlfk5nl5/1541764800000/18163996462292409878/*/1uj__MOpfH7ypjOANbljGN8vEpHh0Py22?e=download"}],
+			cast: {},
+	
+			image: "https://animehade.com/wp-content/uploads/2018/08/logoanimehade.jpg",
+			autostart: false,
+			stretching: "fill",
+			preload:"metadata",
+			controls: true,
+			width: "100%",
+			sharing :{
+				"sites": ["reddit","facebook","twitter","interest","email","googleplus","tumblr","linkedin"]
+			},
+			height: "100%",
+			aspectratio: "16:9",
+			abouttext: "AnimeHADE Player",
+			aboutlink: "//animehade.com/",	
+				
+
+				playbackRateControls: [0.75, 1, 1.25, 1.5],			
+				
+				tracks: [{ 
+					file: "https://animehade.com/wp-content/uploads/2018/08/contoh-subtitle.srt", 
+					label: "Indonesia",
+					kind: "captions",
+					"default": true 
+				},{
+					file: "", 
+					label: "English",
+					kind: "captions",
+					"default": true
+				}],		
+			
+			
+				logo: {
+					file: "https://mjnim.me/Animhade.png",
+					position: 'top-left',
+					
+				},
+			
+			captions: {
+                    		color: '#ffcc00',		    
+                    		backgroundOpacity: '0',
+				edgeStyle: 'uniform',		
+                    		
+				
+                	}
+            
+    
+    });
+
+
+	playerInstance.on('time', function(e) {
+		$cookie.setItem('https://mjnim.me/api/?driveurl=https://drive.google.com/file/d/1uj__MOpfH7ypjOANbljGN8vEpHh0Py22/view?usp=sharing', Math.floor(e.position) + ':' + playerInstance.getDuration() + ':' + new Date());
+	});
+	
+	playerInstance.on('ready', function() {
+		var cookieData = $cookie.getItem('https://mjnim.me/api/?driveurl=https://drive.google.com/file/d/1uj__MOpfH7ypjOANbljGN8vEpHh0Py22/view?usp=sharing');
+		if(cookieData) {
+			var resumeAt = cookieData.split(':')[0],
+				videoDur = cookieData.split(':')[1],
+				lastPlay = cookieData.split(':')[2];
+			if(parseInt(resumeAt) < parseInt(videoDur)) {
+				modal.style.display = "block";
+				playerInstance.seek(resumeAt);
+				logMessage('Terakhir kali kamu menonton anime ini pada : ' + lastPlay); //for demo purposes
+			}
+			else if(cookieData && !(parseInt(resumeAt) < parseInt(videoDur))) {
+				logMessage('Episode ini sudah selesai Anda tonton pada : ' + lastPlay); //for demo purposes
+			}
+		}
+		else {
+			logMessage('Selamat menonton ^_^');
+		}
+	});
+
+
+	
+	playerInstance.addButton("//icons.jwplayer.com/icons/white/download.svg", "Download Video", function() {
+        window.open(playerInstance.getPlaylistItem()['file'] + '&title=[AnimeHADE.com}');
+    }, "download");
+
+
+
+ 
+</script>
+<style type="text/css">
+body{padding: 0; margin: 0;background: #000}
+.jwplayer.jw-flag-aspect-mode, .video-js {width:100% !important; height: 100% !important}
+#player{text-align: center;color:#fff;}
+</style>
+
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/2448a7bd/cloudflare-static/rocket-loader.min.js" data-cf-nonce="7850cfebded61580ac24b859-" defer=""></script></body>
+</html> 
