@@ -1,46 +1,5 @@
 //<![CDATA[
-function getQueryVariable(variable)
-	{
-	var query=window.location.search.substring(1).replace("&m=1","");
-	var dec=decodeURIComponent(escape(window.atob(query)));
-	var vars=dec.split("&");
-	for(var i=0;
-	i<vars.length;
-	i++)
-		{
-		var pair=vars[i].split("=");
-		if(pair[0]==variable)
-			{
-			return pair[1];
-		}
-	}
-	return(false);
-}
-var playerInstance=jwplayer("myvideo");
-var gid=decodeURIComponent(escape(window.atob(getQueryVariable("id"))));
-var player='https://www.googleapis.com/drive/v3/files/'+gid+'?alt=media&key=AIzaSyDjQy5oGfCBWx-KxyyKQnMlH9y-oIwUhB0';
-var img="https://drive.google.com/vt?id="+gid;
-playerInstance.setup(
-	{
-	'autostart':false,'controls':true,'displaydescription':false,'displaytitle':true,'flashplayer':'/flash/jwplayer.flash.swf','playbackRateControls':true,sources:[
-		{
-		"type":"video/mp4","label":"HD","file":player
-	}
-	],'description':'','image':img,'title':'Nonton Anime Subtitle Indonesia','tracks':[
-		{
-		'file':'','label':'Indonesia','kind':'captions','default':true
-	}
-	],'plugins':
-		{
-		'ping':
-			{
-		}
-	}	,'logo':
-		{
-		'file':'https://play.dewamovie21.tech/img/dewamovie21-small-colour.png','link':'https://eiflix.com'
-	}	,'preload':'none','repeat':false,'stagevideo':false,'stretching':'uniform','width':'100%','hight':'100%','aspectratio':'21:9','aboutlink':'https://eiflix.com','abouttext':'Player By eiflix.com'
-}
-);
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('A f(g){2 h=7.B.C.D(1).E("&m=1","");2 j=k(l(7.n(h)));2 8=j.o("&");F(2 i=0;i<8.G;i++){2 a=8[i].o("=");H(a[0]==g){p a[1]}}p(3)}2 q=r("I");2 b=k(l(7.n(f("s"))));2 t=\'4://J.K.5/u/L/M/\'+b+\'?N=O&P=Q-R-S\';2 c="4://u.T.5/U?s="+b;q.V({\'W\':3,\'X\':6,\'Y\':3,\'Z\':6,\'10\':\'/v/r.v.11\',\'12\':6,13:[{"14":"15/16","w":"17","d":t}],\'18\':\'\',\'19\':c,\'1a\':\'1b 1c 1d x\',\'1e\':[{\'d\':\'\',\'w\':\'x\',\'1f\':\'1g\',\'1h\':6}],\'1i\':{\'1j\':{}},\'1k\':{\'d\':\'4://1l.y.1m/c/y-1n-1o.1p\',\'1q\':\'4://e.5\'},\'1r\':\'1s\',\'1t\':3,\'1u\':3,\'1v\':\'1w\',\'1x\':\'z%\',\'1y\':\'z%\',\'1z\':\'1A:9\',\'1B\':\'4://e.5\',\'1C\':\'1D 1E e.5\'});',62,103,'||var|false|https|com|true|window|vars||pair|gid|img|file|eiflix|getQueryVariable|variable|query||dec|decodeURIComponent|escape||atob|split|return|playerInstance|jwplayer|id|player|drive|flash|label|Indonesia|dewamovie21|100|function|location|search|substring|replace|for|length|if|myvideo|www|googleapis|v3|files|alt|media|key|AIzaSyDjQy5oGfCBWx|KxyyKQnMlH9y|oIwUhB0|google|vt|setup|autostart|controls|displaydescription|displaytitle|flashplayer|swf|playbackRateControls|sources|type|video|mp4|HD|description|image|title|Nonton|Anime|Subtitle|tracks|kind|captions|default|plugins|ping|logo|play|tech|small|colour|png|link|preload|none|repeat|stagevideo|stretching|uniform|width|hight|aspectratio|21|aboutlink|abouttext|Player|By'.split('|'),0,{}))
 
 
 //]]>
