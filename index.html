@@ -1,41 +1,100 @@
 <!DOCTYPE html>
 <html>
-<head><title>Dewamovie21 - Download Streaming Sub Indo</title>
+<head><title>Langit2121 - Download Streaming Sub Indo</title>
 <meta name="maValidation" content="d132ca12a2385a8f8bbad2fc2101ec5e" />
 	<script type="text/javascript" src="//content.jwplatform.com/libraries/0P4vdmeO.js"></script>
 <!--<script data-cfasync="false" src="https://content.jwplatform.com/libraries/deLKbptw.js"></script>
 <script>jwplayer.key="SsdKfUwqZbtw6f+uUB+OOOQ7x7icPGDFp5R6sg==";</script>-->
-<script data-cfasync="false" src='/js/jquery.min.js'> </script>
- <link rel="stylesheet" type="text/css" href="/css/player.css">
- <link rel="stylesheet" type="text/css" href="/css/jwplayer.css">	
+<script data-cfasync="false" src='https://arachi007.github.io/player/js/jquery.min.js'> </script>
+ <link rel="stylesheet" type="text/css" href="https://arachi007.github.io/player/css/player.css">
+ <link rel="stylesheet" type="text/css" href="https://arachi007.github.io/player/css/jwplayer.css">	
 <style type="text/css">
+/* The Modal (background) */
+#infoPlayer {
+	min-height: calc(100vh - 60px);
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+	justify-content: center;
+    overflow: auto; /* Enable scroll if needed */
+	flex-direction: column;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,1); /* Black w/ opacity */
+	
+	@media(max-width: 768px) {
+		min-height: calc(100vh - 20px);
+	}
+}
+
+/* Modal Content/Box */
+.infoPlayer-content {
+	color: #ccc;
+    background-color: rgba(50,50,50,0.8);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 	</style>
 
 	</head>
 	<body>
+	    <div class='modal' id='infoPlayer'>
+<div class='infoPlayer-content'>
+<p id='resumeInfo'>
+  Halo...<br/>
+  Senang berjumpa lagi denganmu.<br/>
+</p>
+<p>
+Klik atau Tap box ini untuk menutup.
+</p>
+</div>
+</div>
 <div class="loading-container"><div class="loading-ani"></div><div class="loading-text">loading video...</div></div>		
 <div id="myvideo"></div>
 <script>
 //<![CDATA[
+
+
 	// Setting JW Player
 var autostart = false; 			// true / flase
 var disdesc = false;			// true / false
 var disttl = true;				// true / false
-var desc = "";					// "text"
-var ttl = "Nonton Anime Subtitle Indonesia";						// "text"
-var logoimg = "https://play.dewamovie21.tech/img/dewamovie21-small-colour.png";					// "https://play.dewamovie21.tech/img/dewamovie21-small-colour.png"
-  var logolink = "https://ndelokanime.blogspot.com";					// "https://ndelokanime.blogspot.com"
+var desc = "";					// "text"						// "text"
+var logoimg = "/img/dewamovie21-small-colour.png";					// "https://play.dewamovie21.tech/img/dewamovie21-small-colour.png"
+  var logolink = "https://langit21.net";					// "https://ndelokanime.blogspot.com"
 var linkiklan = "";				// "https://play.dewamovie21.tech/code/kodeads.xml"
+
+
 var $cookie=
 	{
 	getItem:function(sKey)
 		{
-		return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(sKey).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null;
+		return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(sKey).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null
 	},setItem:function(sKey,sValue,vEnd,sPath,sDomain,bSecure)
 		{
 		if(!sKey||/^(?:expires|max\-age|path|domain|secure)$/i.test(sKey))
 			{
-			return false;
+			return false
 		}
 		var sExpires="";
 		if(vEnd)
@@ -53,50 +112,50 @@ var $cookie=
 			}
 		}
 		document.cookie=encodeURIComponent(sKey)+"="+encodeURIComponent(sValue)+sExpires+(sDomain?";domain="+sDomain:"")+(sPath?";path="+sPath:"")+(bSecure?";secure":"");
-		return true;
+		return true
 	},removeItem:function(sKey,sPath,sDomain)
 		{
 		if(!sKey||!this.hasItem(sKey))
 			{
-			return false;
+			return false
 		}
 		document.cookie=encodeURIComponent(sKey)+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT"+(sDomain?";domain="+sDomain:"")+(sPath?";path="+sPath:"");
-		return true;
+		return true
 	},hasItem:function(sKey)
 		{
-		return(new RegExp("(?:^|;\\s*)"+encodeURIComponent(sKey).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=")).test(document.cookie);
+		return(new RegExp("(?:^|;\\s*)"+encodeURIComponent(sKey).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=")).test(document.cookie)
 	},keys:function()
 		{
-		var aKeys=document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g,"").split(/\s*(?:\=[^;]*)?;\s*/);
-		for(var nIdx=0;
-		nIdx<aKeys.length;
-		nIdx++)
+		var aKeys=document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\*(?:\=[^;]*)?(?:\1|$)/g,"").split(/\s*(?:\=[^;]*)?;\s*/);
+		for(var nIdx=0;nIdx<aKeys.length;nIdx++)
 			{
-			aKeys[nIdx]=decodeURIComponent(aKeys[nIdx]);
+			aKeys[nIdx]=decodeURIComponent(aKeys[nIdx])
 		}
-		return aKeys;
+		return aKeys
 	}
 };
 var logMessage=function(message)
 	{
-	document.getElementById('resumeInfo').innerHTML+=message+='<br />';
+	document.getElementById('resumeInfo').innerHTML+=message+='<br />'
 };
 var modal=document.getElementById('infoPlayer');
 var span=document.getElementsByClassName("infoPlayer-content")[0];
 span.onclick=function()
 	{
-	modal.style.display="none";
+	modal.style.display="none"
 };
 window.onclick=function(event)
 	{
 	if(event.target==modal)
 		{
-		modal.style.display="none";
+		modal.style.display="none"
 	}
 };
+
+
 function getQueryVariable(variable)
 	{
-	var query=window.location.search.substring(1).replace("&m=1","");
+	var query=window.location.search.substring(1);
 	var dec=decodeURIComponent(escape(window.atob(query)));
 	var vars=dec.split("&");
 	for(var i=0;
@@ -114,7 +173,8 @@ function getQueryVariable(variable)
 var playerInstance=jwplayer("myvideo");
 var gid=decodeURIComponent(escape(window.atob(getQueryVariable("id"))));
 var player='https://www.googleapis.com/drive/v3/files/'+gid+'?alt=media&key=AIzaSyDjQy5oGfCBWx-KxyyKQnMlH9y-oIwUhB0';
-var img="https://drive.google.com/vt?id="+gid;
+var img=getQueryVariable("poster");
+var ttl=getQueryVariable("title");
 playerInstance.setup(
 	{
 	'autostart':autostart,'controls':true,'displaydescription':disdesc,'displaytitle':disttl,'flashplayer':'/flash/jwplayer.flash.swf','playbackRateControls':true,sources:[
@@ -145,7 +205,20 @@ playerInstance.setup(
 	},'preload':'metadata','repeat':false,'stagevideo':false,'stretching':'uniform','width':'100%','hight':'100%','aspectratio':'21:9','aboutlink':'https://eiflix.com','abouttext':'Player By eiflix.com'
 }
 );
-playerInstance.on('time',function(e)
+
+	playerInstance.on('playAttemptFailed', function() {
+  playerInstance.load({
+    file:"/video/failed2.mp4",
+    image:"/img/failed.jpg"
+  });
+  playerInstance.play();
+});
+	playerInstance.addButton("//icons.jwplayer.com/icons/white/download.svg", "Download Subtitle", function() {
+        window.open("https://safelinku.net/full/?api=7eb43b0a6e9cb0ad08c66508c7825ed9d00ec81f&type=1&url=" + playerInstance.getPlaylistItem()['tracks'][0]['file']);
+    }, "subtitle");
+  document.title = "Streaming " + getQueryVariable('title') + " | Dewamovie21.tech";	
+  
+  playerInstance.on('time',function(e)
 	{
 	$cookie.setItem(window.location.search.substring(1),Math.floor(e.position)+':'+playerInstance.getDuration()+':'+new Date());
 }
@@ -173,20 +246,6 @@ playerInstance.on('ready',function()
 	}
 }
 );
-	playerInstance.on('playAttemptFailed', function() {
-  playerInstance.load({
-    file:"https://tool.indosub.me/video/failed2.mp4",
-    image:"https://tool.indosub.me/img/failed.jpg"
-  });
-  playerInstance.play();
-});
-	playerInstance.on('displayClick', function(){
-	playerInstance.setFullscreen(true);
-	});
-	playerInstance.addButton("//icons.jwplayer.com/icons/white/download.svg", "Download Subtitle", function() {
-        window.open("https://safelinku.net/full/?api=7eb43b0a6e9cb0ad08c66508c7825ed9d00ec81f&type=1&url=" + playerInstance.getPlaylistItem()['tracks'][0]['file']);
-    }, "subtitle");
-  document.title = "Streaming " + getQueryVariable('title') + " | Dewamovie21.tech";	
  //]]>
 </script>
 <!-- <script type="text/javascript">
