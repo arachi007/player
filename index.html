@@ -17,7 +17,162 @@
 <div id="myvideo"></div>
 <script>
 //<![CDATA[
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('14 3(C){2 A=F.17.Y.Z(1);2 v=V(W(F.X(A)));2 s=v.z("&");10(2 i=0;i<s.1z;i++){2 r=s[i].z("=");g(r[0]==C){u r[1]}}u(7)}2 w=x("12");2 o=\'\';g(3("8").c("B")){o=3("8")}q{2 t=3("8");2 E=t.f(\'4://h.p.k/1b?8=\',\'\').f(\'4://h.p.k/1i?8=\',\'\').f(\'4://h.p.k/l/d/\',\'\').f(\'/1U\',\'\');o=\'4://L.M.k/h/N/O/\'+E+\'?P=Q&R=S-T-U\'}2 m=\'\';g(3("n").c("B")){m=3("n")}q{m=\'4://n.b.a/\'+3("n")}2 6=3("e");g(6===\'\'||6.c(\'11\')||!6.c(\'.D\')){2 e=\'/6/13.D\'}q{2 e=6}w.K({\'15\':7,\'16\':j,\'18\':7,\'19\':j,\'1a\':\'/G/x.G.1c\',\'1d\':j,1e:[{"1f":"1g/1h","H":"1j","l":o}],1k:{1l:"1m",1n:{1o:{1p:"1q",1r:"4://1s.b.a/1t/1u.1v",1w:5},},},\'1x\':\'\',\'1y\':e,\'I\':\'1A \'+3("I")+\' 1B J\',\'1C\':[{\'l\':m,\'H\':\'J\',\'1D\':\'1E\',\'1F\':j}],\'1G\':{\'1H\':{}},\'1I\':{\'l\':\'/6/b-1J-1K.1L\',\'1M\':\'4://b.a\'},\'1N\':\'1O\',\'1P\':7,\'1Q\':7,\'1R\':\'1S\',\'1T\':\'y%\',\'1V\':\'y%\',\'1W\':\'21:9\',\'1X\':\'4://b.a\',\'1Y\':\'1Z 20 22.a\'});',62,127,'||var|getQueryVariable|https||img|false|id||tech|dewamovie21|match||poster|replace|if|drive||true|com|file|subtitle|sub|player|google|else|pair|vars|getID|return|dec|playerInstance|jwplayer|100|split|query|http|variable|jpg|getGID|window|flash|label|title|Indonesia|setup|www|googleapis|v3|files|alt|media|key|AIzaSyDjQy5oGfCBWx|KxyyKQnMlH9y|oIwUhB0|decodeURIComponent|escape|atob|search|substring|for|null|myvideo|bioskop|function|autostart|controls|location|displaydescription|displaytitle|flashplayer|open|swf|playbackRateControls|sources|type|video|mp4|uc|HD|advertising|client|vast|schedule|adbreak1|offset|pre|tag|play|code|kodeads|xml|skipoffset|description|image|length|Nonton|Subtitle|tracks|kind|captions|default|plugins|ping|logo|small|colour|png|link|preload|none|repeat|stagevideo|stretching|uniform|width|view|hight|aspectratio|aboutlink|abouttext|Player|By||DewaMovie21'.split('|'),0,{}));
+	// Setting JW Player
+var autostart = false; 			// true / flase
+var disdesc = false;			// true / false
+var disttl = true;				// true / false
+var desc = "";					// "text"
+var ttl = "Nonton Anime Subtitle Indonesia";						// "text"
+var logoimg = "https://play.dewamovie21.tech/img/dewamovie21-small-colour.png";					// "https://play.dewamovie21.tech/img/dewamovie21-small-colour.png"
+  var logolink = "https://ndelokanime.blogspot.com";					// "https://ndelokanime.blogspot.com"
+var linkiklan = "";				// "https://play.dewamovie21.tech/code/kodeads.xml"
+var $cookie=
+	{
+	getItem:function(sKey)
+		{
+		return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(sKey).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null;
+	},setItem:function(sKey,sValue,vEnd,sPath,sDomain,bSecure)
+		{
+		if(!sKey||/^(?:expires|max\-age|path|domain|secure)$/i.test(sKey))
+			{
+			return false;
+		}
+		var sExpires="";
+		if(vEnd)
+			{
+			switch(vEnd.constructor)
+				{
+				case Number:var d=new Date();
+				d.setTime(d.getTime()+(exdays*24*60*60*1000));
+				sExpires=vEnd===Infinity?";expires="+d.toUTCString()+"":";max-age="+vEnd;
+				break;
+				case String:sExpires=";expires="+vEnd;
+				break;
+				case Date:sExpires=";expires="+vEnd.toUTCString();
+				break;
+			}
+		}
+		document.cookie=encodeURIComponent(sKey)+"="+encodeURIComponent(sValue)+sExpires+(sDomain?";domain="+sDomain:"")+(sPath?";path="+sPath:"")+(bSecure?";secure":"");
+		return true;
+	},removeItem:function(sKey,sPath,sDomain)
+		{
+		if(!sKey||!this.hasItem(sKey))
+			{
+			return false;
+		}
+		document.cookie=encodeURIComponent(sKey)+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT"+(sDomain?";domain="+sDomain:"")+(sPath?";path="+sPath:"");
+		return true;
+	},hasItem:function(sKey)
+		{
+		return(new RegExp("(?:^|;\\s*)"+encodeURIComponent(sKey).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=")).test(document.cookie);
+	},keys:function()
+		{
+		var aKeys=document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g,"").split(/\s*(?:\=[^;]*)?;\s*/);
+		for(var nIdx=0;
+		nIdx<aKeys.length;
+		nIdx++)
+			{
+			aKeys[nIdx]=decodeURIComponent(aKeys[nIdx]);
+		}
+		return aKeys;
+	}
+};
+var logMessage=function(message)
+	{
+	document.getElementById('resumeInfo').innerHTML+=message+='<br />';
+};
+var modal=document.getElementById('infoPlayer');
+var span=document.getElementsByClassName("infoPlayer-content")[0];
+span.onclick=function()
+	{
+	modal.style.display="none";
+};
+window.onclick=function(event)
+	{
+	if(event.target==modal)
+		{
+		modal.style.display="none";
+	}
+};
+function getQueryVariable(variable)
+	{
+	var query=window.location.search.substring(1).replace("&m=1","");
+	var dec=decodeURIComponent(escape(window.atob(query)));
+	var vars=dec.split("&");
+	for(var i=0;
+	i<vars.length;
+	i++)
+		{
+		var pair=vars[i].split("=");
+		if(pair[0]==variable)
+			{
+			return pair[1];
+		}
+	}
+	return(false);
+}
+var playerInstance=jwplayer("myvideo");
+var gid=decodeURIComponent(escape(window.atob(getQueryVariable("id"))));
+var player='https://www.googleapis.com/drive/v3/files/'+gid+'?alt=media&key=AIzaSyDjQy5oGfCBWx-KxyyKQnMlH9y-oIwUhB0';
+var img="https://drive.google.com/vt?id="+gid;
+playerInstance.setup(
+	{
+	'autostart':autostart,'controls':true,'displaydescription':disdesc,'displaytitle':disttl,'flashplayer':'/flash/jwplayer.flash.swf','playbackRateControls':true,sources:[
+		{
+		"type":"video/mp4","label":"HD","file":player
+	}
+	],advertising:
+		{
+		client:"vast",schedule:
+			{
+			adbreak1:
+				{
+				offset:"pre",tag:linkiklan,skipoffset:5
+			},
+		},
+	},'description':desc,'image':img,'title':ttl,'tracks':[
+		{
+		'file':'','label':'Indonesia','kind':'captions','default':true
+	}
+	],'plugins':
+		{
+		'ping':
+			{
+		}
+	},'logo':
+		{
+		'file':logoimg,'link':logolink
+	},'preload':'metadata','repeat':false,'stagevideo':false,'stretching':'uniform','width':'100%','hight':'100%','aspectratio':'21:9','aboutlink':'https://eiflix.com','abouttext':'Player By eiflix.com'
+}
+);
+playerInstance.on('time',function(e)
+	{
+	$cookie.setItem(window.location.search.substring(1),Math.floor(e.position)+':'+playerInstance.getDuration()+':'+new Date());
+}
+);
+playerInstance.on('ready',function()
+	{
+	var cookieData=$cookie.getItem(window.location.search.substring(1));
+	if(cookieData)
+		{
+		var resumeAt=cookieData.split(':')[0],videoDur=cookieData.split(':')[1],lastPlay=cookieData.split(':')[2]+':'+cookieData.split(':')[3]+':'+cookieData.split(':')[4];
+		if(parseInt(resumeAt)<parseInt(videoDur))
+			{
+			modal.style.display="block";
+			playerInstance.seek(resumeAt);
+			logMessage('Terakhir kali anda menonton video ini pada : '+lastPlay);
+		}
+		else if(cookieData&&!(parseInt(resumeAt)<parseInt(videoDur)))
+			{
+			logMessage('Episode ini sudah selesai Anda tonton pada : '+lastPlay);
+		}
+	}
+	else
+		{
+		logMessage('Selamat menonton');
+	}
+}
+);
 	playerInstance.on('playAttemptFailed', function() {
   playerInstance.load({
     file:"https://tool.indosub.me/video/failed2.mp4",
