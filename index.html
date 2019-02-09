@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><title>Langit2121 - Download Streaming Sub Indo</title>
+<head><title>Dewamovie21 - Download Streaming Sub Indo</title>
 <meta name="maValidation" content="d132ca12a2385a8f8bbad2fc2101ec5e" />
 	<script type="text/javascript" src="//content.jwplatform.com/libraries/0P4vdmeO.js"></script>
 <!--<script data-cfasync="false" src="https://content.jwplatform.com/libraries/deLKbptw.js"></script>
@@ -79,9 +79,10 @@ Klik atau Tap box ini untuk menutup.
 var autostart = false; 			// true / flase
 var disdesc = false;			// true / false
 var disttl = true;				// true / false
-var desc = "";					// "text"						// "text"
-var logoimg = "/img/dewamovie21-small-colour.png";					// "https://play.dewamovie21.tech/img/dewamovie21-small-colour.png"
-  var logolink = "https://langit21.net";					// "https://ndelokanime.blogspot.com"
+var desc = "";					// "text"
+var ttl = "Nonton Anime Subtitle Indonesia";						// "text"
+var logoimg = "https://play.dewamovie21.tech/img/dewamovie21-small-colour.png";					// "https://play.dewamovie21.tech/img/dewamovie21-small-colour.png"
+  var logolink = "https://ndelokanime.blogspot.com";					// "https://ndelokanime.blogspot.com"
 var linkiklan = "";				// "https://play.dewamovie21.tech/code/kodeads.xml"
 
 
@@ -174,7 +175,6 @@ var playerInstance=jwplayer("myvideo");
 var gid=decodeURIComponent(escape(window.atob(getQueryVariable("id"))));
 var player='https://www.googleapis.com/drive/v3/files/'+gid+'?alt=media&key=AIzaSyDjQy5oGfCBWx-KxyyKQnMlH9y-oIwUhB0';
 var img=getQueryVariable("poster");
-var ttl=getQueryVariable("title");
 playerInstance.setup(
 	{
 	'autostart':autostart,'controls':true,'displaydescription':disdesc,'displaytitle':disttl,'flashplayer':'/flash/jwplayer.flash.swf','playbackRateControls':true,sources:[
@@ -206,18 +206,7 @@ playerInstance.setup(
 }
 );
 
-	playerInstance.on('playAttemptFailed', function() {
-		var url = (window.location != window.parent.location) ? document.referrer: document.location.href;
-		
-  playerInstance.load({
-    file:"/video/failed2.mp4",
-    image:"/img/failed.jpg"
-  });
-  playerInstance.play();
-		$.get( "http://play.langit21.net/report.php?link="+ url + "", function( data ) {
-  alert("This Video Has Been Report. Please wait for 48 Hours for fixing.");
-});
-	});
+
 	playerInstance.addButton("//icons.jwplayer.com/icons/white/download.svg", "Download Subtitle", function() {
         window.open("https://safelinku.net/full/?api=7eb43b0a6e9cb0ad08c66508c7825ed9d00ec81f&type=1&url=" + playerInstance.getPlaylistItem()['tracks'][0]['file']);
     }, "subtitle");
@@ -228,6 +217,19 @@ playerInstance.setup(
 	$cookie.setItem(window.location.search.substring(1),Math.floor(e.position)+':'+playerInstance.getDuration()+':'+new Date());
 }
 );
+
+playerInstance.on('playAttemptFailed', function() {
+		var url = (window.location != window.parent.location) ? document.referrer: document.location.href;
+		
+  playerInstance.load({
+    file:"/video/failed2.mp4",
+    image:"/img/failed.jpg"
+  });
+  playerInstance.play();
+		$.get( "http://play.langit21.net/report.php?link="+ url + "", function( data ) {
+  alert("This Video Has Been Report. Please wait for 48 Hours for fixing.");
+});
+});
 playerInstance.on('ready',function()
 	{
 	var cookieData=$cookie.getItem(window.location.search.substring(1));
